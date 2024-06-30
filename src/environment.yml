@@ -1,6 +1,5 @@
 name: ssl
 channels:
-  - conda-forge
   - defaults
 dependencies:
   - _libgcc_mutex=0.1=main
@@ -118,9 +117,6 @@ dependencies:
     # detectron2: move into post-link: section, they cannot able on pip
     # https://detectron2.readthedocs.io/en/latest/tutorials/install.html
     # - detectron2
-    # torch: need to add extra-url repository
-    - --extra-index-url https://download.pytorch.org/whl/cu111
-    - torch==1.9.0+cu111
     - fairscale==0.4.9
     - fonttools==4.37.2
     - future==0.18.2
@@ -161,6 +157,9 @@ dependencies:
     - termcolor==2.0.1
     - timm==0.6.7
     - tomli==2.0.1
+    # torch: need to add extra-url repository
+    - --extra-index-url https://download.pytorch.org/whl/cu111
+    - torch==1.9.0+cu111
     - torchaudio==0.9.0
     - torchvision==0.10.0+cu111
     - tqdm==4.64.1
@@ -171,4 +170,3 @@ dependencies:
     - zipp==3.8.1
 post-link:
   - pip install 'git+https://github.com/facebookresearch/detectron2.git'
-prefix: /home/CORP/fuwen.tan/miniconda3/envs/ssl
